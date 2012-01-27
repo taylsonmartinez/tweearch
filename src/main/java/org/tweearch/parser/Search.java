@@ -23,42 +23,42 @@ public class Search {
     private Calendar until;
     private ResultType resultType;
 
-    public Search setQuery(String query) {
+    public Search createQuery(String query) {
         this.query = query;
         return this;
     }
 
-    public Search setLang(String lang) {
+    public Search withLang(String lang) {
         this.lang = lang;
         return this;
     }
 
-    public Search setEntities(boolean status) {
+    public Search withEntities(boolean status) {
         this.entities = status;
         return this;
     }
 
-    public Search setPage(int page) {
+    public Search withPage(int page) {
         this.page = page;
         return this;
     }
 
-    public Search setRpp(int rpp) {
+    public Search withRpp(int rpp) {
         this.rpp = rpp;
         return this;
     }
 
-    public Search setResultType(ResultType resultType) {
+    public Search withResultType(ResultType resultType) {
         this.resultType = resultType;
         return this;
     }
 
-    public Search setSinceId(long sinceId) {
+    public Search withSinceId(long sinceId) {
         this.sinceId = sinceId;
         return this;
     }
 
-    public Search setUntil(Calendar untilCalendar) {
+    public Search withUntil(Calendar untilCalendar) {
         this.until = untilCalendar;
         return this;
     }

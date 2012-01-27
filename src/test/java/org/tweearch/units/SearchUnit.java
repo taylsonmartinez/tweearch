@@ -21,35 +21,36 @@ public class SearchUnit {
     @Test
     public void shouldParserQueryToParameters() throws TweearchException {
         Search search = new Search();
-        String parameters = search.setQuery("albiere").build();
+
+        String parameters = search.createQuery("albiere").build();
         Assert.assertEquals("q=albiere", parameters);
     }
 
     @Test
     public void shouldParserQueryAndLangToParameters() throws TweearchException {
         Search search = new Search();
-        String parameters = search.setQuery("albiere").setLang("pt").build();
+        String parameters = search.createQuery("albiere").withLang("pt").build();
         Assert.assertEquals("q=albiere&lang=pt", parameters);
     }
 
     @Test
     public void shouldParserQueryAndEntitiesToParameters() throws TweearchException {
         Search search = new Search();
-        String parameters = search.setQuery("albiere").setEntities(true).build();
+        String parameters = search.createQuery("albiere").withEntities(true).build();
         Assert.assertEquals("q=albiere&include_entities=1", parameters);
     }
 
     @Test
     public void shouldParserQueryAndRppToParameters() throws TweearchException {
         Search search = new Search();
-        String parameters = search.setQuery("albiere").setPage(1).build();
+        String parameters = search.createQuery("albiere").withPage(1).build();
         Assert.assertEquals("q=albiere&page=1", parameters);
     }
 
     @Test
     public void shouldParserQueryAndPageToParameters() throws TweearchException {
         Search search = new Search();
-        String parameters = search.setQuery("albiere").setRpp(100).build();
+        String parameters = search.createQuery("albiere").withRpp(100).build();
         Assert.assertEquals("q=albiere&rpp=100", parameters);
     }
 
@@ -60,7 +61,7 @@ public class SearchUnit {
         Calendar calendar = new GregorianCalendar();
         calendar.set(2012, 0, 27);
 
-        String parameters = search.setQuery("albiere").setUntil(calendar).build();
+        String parameters = search.createQuery("albiere").withUntil(calendar).build();
         Assert.assertEquals("q=albiere&until=2012-01-27", parameters);
     }
 
@@ -68,7 +69,7 @@ public class SearchUnit {
     public void shouldParserQueryAndResultTypeToParameters() throws TweearchException {
         Search search = new Search();
 
-        String parameters = search.setQuery("albiere").setResultType(ResultType.RECENT).build();
+        String parameters = search.createQuery("albiere").withResultType(ResultType.RECENT).build();
         Assert.assertEquals("q=albiere&result_type=recent", parameters);
     }
 
@@ -76,7 +77,7 @@ public class SearchUnit {
     public void shouldParserQueryAndSinceIdToParameters() throws TweearchException {
         Search search = new Search();
 
-        String parameters = search.setQuery("albiere").setSinceId(12).build();
+        String parameters = search.createQuery("albiere").withSinceId(12).build();
         Assert.assertEquals("q=albiere&since_id=12", parameters);
     }
 
@@ -87,7 +88,7 @@ public class SearchUnit {
         Calendar calendar = new GregorianCalendar();
         calendar.set(2012, 0, 27);
 
-        String parameters = search.setQuery("albiere").setRpp(100).setPage(1).setLang("pt").setEntities(true).setUntil(calendar).build();
+        String parameters = search.createQuery("albiere").withRpp(100).withPage(1).withLang("pt").withEntities(true).withUntil(calendar).build();
         Assert.assertEquals("q=albiere&lang=pt&include_entities=1&page=1&rpp=100&until=2012-01-27", parameters);
     }
 
@@ -96,21 +97,21 @@ public class SearchUnit {
         Search search = new Search();
 
         try {
-            search.setSinceId(12).build();
+            search.withSinceId(12).build();
             Assert.fail();
         } catch (TweearchException e) {
 
         }
 
         try {
-            search.setQuery("").build();
+            search.createQuery("").build();
             Assert.fail();
         } catch (TweearchException e) {
 
         }
 
         try {
-            search.setQuery(null).build();
+            search.createQuery(null).build();
             Assert.fail();
         } catch (TweearchException e) {
         }
