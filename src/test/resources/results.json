@@ -1,0 +1,32 @@
+{
+    "completed_in":0.011,
+    "max_id":162676729649963009,
+    "max_id_str":"162676729649963009",
+    "page":1,
+    "query":"from%3Aalbiere_test",
+    "refresh_url":"?since_id=162676729649963009&q=from%3Aalbiere_test",
+    "results":[
+        {"created_at":"Thu, 26 Jan 2012 23:22:09 +0000",
+            "from_user":"albiere_test",
+            "from_user_id":475335824,
+            "from_user_id_str":"475335824",
+            "from_user_name":"Albiere Test",
+            "geo":null,
+            "id":162676729649963009,
+            "id_str":"162676729649963009",
+            "iso_language_code":"en",
+            "metadata":{"result_type":"recent"},
+            "profile_image_url":"http://a0.twimg.com/sticky/default_profile_images/default_profile_5_normal.png",
+            "profile_image_url_https":"https://si0.twimg.com/sticky/default_profile_images/default_profile_5_normal.png",
+            "source":"&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+            "text":"testando tweet",
+            "to_user":null,
+            "to_user_id":null,
+            "to_user_id_str":null,
+            "to_user_name":null
+        }
+    ],
+    "results_per_page":100,
+    "since_id":0,
+    "since_id_str":"0"
+}
